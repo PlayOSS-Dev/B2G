@@ -52,6 +52,12 @@ echo MAKE_FLAGS=-j$((CORE_COUNT + 2)) > .tmp-config
 echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
 
 case "$1" in
+"commtiva-z71")
+	echo DEVICE=z71 >> .tmp-config &&
+	repo_sync z71 &&
+	(cd device/commtiva/z71 && ./extract-files.sh)
+	;;
+
 "galaxy-s2")
 	echo DEVICE=galaxys2 >> .tmp-config &&
 	repo_sync galaxy-s2 &&
@@ -104,6 +110,7 @@ case "$1" in
 	echo Usage: $0 \(device name\)
 	echo
 	echo Valid devices to configure are:
+        echo - z71
 	echo - galaxy-s2
 	echo - galaxy-nexus
 	echo - nexus-s
