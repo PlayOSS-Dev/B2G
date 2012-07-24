@@ -45,14 +45,14 @@ if [ -n "$2" ]; then
 	git commit -m "manifest" &&
 	cd ..
 else
-	GITREPO="git://github.com/mozilla-b2g/b2g-manifest"
+	GITREPO="git://github.com/pjsports/b2g-manifest"
 fi
 
 echo MAKE_FLAGS=-j$((CORE_COUNT + 2)) > .tmp-config
 echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
 
 case "$1" in
-"commtiva-z71")
+"z71")
 	echo DEVICE=z71 >> .tmp-config &&
 	repo_sync z71 &&
 	(cd device/commtiva/z71 && ./extract-files.sh)
