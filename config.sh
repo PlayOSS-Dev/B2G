@@ -54,8 +54,7 @@ echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
 case "$1" in
 "z71")
 	echo DEVICE=z71 >> .tmp-config &&
-	repo_sync z71 &&
-	(cd device/commtiva/z71 && ./extract-files.sh)
+	repo_sync z71 	
 	;;
 
 "galaxy-s2")
