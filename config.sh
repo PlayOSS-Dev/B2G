@@ -52,6 +52,11 @@ echo MAKE_FLAGS=-j$((CORE_COUNT + 2)) > .tmp-config
 echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
 
 case "$1" in
+"a500")
+	echo DEVICE=a500 >> .tmp-config &&
+	repo_sync a500	
+	;;
+
 "z71")
 	echo DEVICE=z71 >> .tmp-config &&
 	repo_sync z71 	
@@ -109,6 +114,7 @@ case "$1" in
 	echo Usage: $0 \(device name\)
 	echo
 	echo Valid devices to configure are:
+        echo - a500
         echo - z71
 	echo - galaxy-s2
 	echo - galaxy-nexus
