@@ -63,6 +63,11 @@ case "$1" in
         repo_sync z71   
        ;;
 
+"spica")
+        echo DEVICE=spica >> .tmp-config &&
+        repo_sync spica   
+       ;;
+
 "galaxy-s2")
 	echo DEVICE=galaxys2 >> .tmp-config &&
 	repo_sync galaxy-s2 &&
@@ -117,6 +122,7 @@ case "$1" in
 	echo Valid devices to configure are:
         echo - a500
         echo - z71
+        echo - spica
 	echo - galaxy-s2
 	echo - galaxy-nexus
 	echo - nexus-s
