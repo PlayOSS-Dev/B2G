@@ -45,23 +45,14 @@ if [ -n "$2" ]; then
 	git commit -m "manifest" &&
 	cd ..
 else
-	GITREPO="git://github.com/pjsports/b2g-manifest"
+	GITREPO="git://github.com/mozilla-b2g/b2g-manifest"
 fi
 
 echo MAKE_FLAGS=-j$((CORE_COUNT + 2)) > .tmp-config
 echo GECKO_OBJDIR=$PWD/objdir-gecko >> .tmp-config
+echo DEVICE_NAME=$1 >> .tmp-config
 
 case "$1" in
-"a500")
-	echo DEVICE=a500 >> .tmp-config &&
-	repo_sync a500	
-	;;
-
-"z71")
-	echo DEVICE=z71 >> .tmp-config &&
-	repo_sync z71 	
-	;;
-
 "galaxy-s2")
 	echo DEVICE=galaxys2 >> .tmp-config &&
 	repo_sync galaxy-s2 &&
@@ -114,8 +105,6 @@ case "$1" in
 	echo Usage: $0 \(device name\)
 	echo
 	echo Valid devices to configure are:
-        echo - a500
-        echo - z71
 	echo - galaxy-s2
 	echo - galaxy-nexus
 	echo - nexus-s
