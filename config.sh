@@ -58,7 +58,7 @@ case "$1" in
         repo_sync a500  
         ;;	  	
 	  	
-"z71")
+"gingerbread-b2g")
         echo DEVICE=z71 >> .tmp-config &&
         repo_sync z71   
        ;;
@@ -121,7 +121,7 @@ case "$1" in
 	echo
 	echo Valid devices to configure are:
         echo - a500
-        echo - z71
+        echo - gingerbread-b2g
         echo - spica
 	echo - galaxy-s2
 	echo - galaxy-nexus
